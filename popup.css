@@ -1,0 +1,215 @@
+/* Root Variables */
+:root {
+    --accent: #4f46e5;
+    --muted: #6b7280;
+    --border-color: #eee;
+    --modal-shadow: 0 8px 24px rgba(2, 6, 23, 0.2);
+    --note-hover-shadow: 0 8px 20px rgba(2, 6, 23, 0.06);
+    --background-light: #f8fafc;
+    --border-light: #ddd;
+}
+
+/* Global Reset and Base Styles */
+*,
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+textarea {
+    resize: none;
+    margin-top: 1rem;
+    height: 200px;
+}
+
+/* App Container */
+#app {
+    width: 300px;
+    height: 400px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.domain {
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--accent);
+}
+
+/* Buttons */
+.addBtn {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.12s ease;
+}
+
+.addBtn:hover {
+    transform: translateY(1px) scale(1.01);
+    background: #ff7a50;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Notes List */
+.notesList {
+    flex: 1;
+    overflow: auto;
+    padding-top: 6px;
+}
+
+.noteItem {
+    border-radius: 8px;
+    padding: 8px;
+    margin-bottom: 8px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.noteItem:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--note-hover-shadow);
+}
+
+.noteMeta {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+.notePreview {
+    font-size: 13px;
+    line-height: 1.4em;
+    max-height: calc(1.4em * 3);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    transition: max-height 0.25s ease;
+}
+
+.notePreview.expanded {
+    max-height: none;
+}
+
+.toggleTextBtn {
+    font-size: 12px;
+    color: var(--accent);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 2px 4px;
+    margin-top: 4px;
+}
+
+.noteActions {
+    display: flex;
+    gap: 6px;
+}
+
+.noteActions button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.noteEmpty {
+    color: #6b7280;
+    font-size: 13px;
+    text-align: center
+}
+
+.noteError {
+    color: #7a0000;
+    margin-top: 0.25rem;
+}
+
+.deleteNote {
+    font-size: 20px;
+    color:#7a0000;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    left: 8px;
+    right: 8px;
+    top: 50px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: var(--modal-shadow);
+}
+
+.hidden {
+    display: none;
+}
+
+.modal-inner textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid var(--border-light);
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.modal-actions button {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    min-width: 100px;
+    cursor: pointer;
+    color: #fff;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.modal-actions button:nth-child(1) {
+    background: linear-gradient(135deg, #4CAF50, #66BB6A);
+}
+
+.modal-actions button:nth-child(1):hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 6px 12px rgba(76,175,80,0.4);
+}
+
+.modal-actions button:nth-child(1):disabled {
+    background: #c5c5c5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.modal-actions button:nth-child(2) {
+    background: linear-gradient(135deg, #f44336, #ef5350);
+}
+
+.modal-actions button:nth-child(2):hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 6px 12px rgba(244,67,54,0.4);
+}

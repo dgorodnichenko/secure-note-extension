@@ -1,0 +1,31 @@
+<html lang="uk">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Secure Notes</title>
+        <link rel="stylesheet" href="popup.css">
+        <script src="utils.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <header class="header">
+                <div id="domain" class="domain">—</div>
+                <button id="addBtn" class="addBtn">Додати нотатку</button>
+            </header>
+            <main>
+                <div id="notesList" class="notesList">Завантаженя...</div>
+            </main>
+            <div id="editorModal" class="modal hidden">
+                <div class="modal-inner">
+                    <h3>Нотаток для <span id="modalDomain"></span></h3>
+                    <textarea id="noteText" placeholder="Додайте свою нотатку..."></textarea>
+                    <div class="modal-actions">
+                        <button id="saveNote" disabled>Зберегти</button>
+                        <button id="cancelNote">Відхилити</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="popup.js"></script>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+.secure-note-floating-btn {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4f46e5, #06b6d4);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.25);
+    z-index: 2147483647;
+    cursor: pointer;
+    transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.secure-note-floating-btn:hover {
+    transform: translateY(-3px);
+}
+
+.secure-note-floating-btn .plus {
+    font-size: 28px;
+    line-height: 1;
+}
